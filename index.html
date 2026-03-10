@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style></style>
+  <body>
+    <button id="btn">Дарах</button>
+    <h1 id="shootoo"></h1>
+    <img id="shoozurag" src="shoo1.png" />
+    <script>
+      let zurag = document.getElementById("shoozurag");
+      let btn = document.getElementById("btn");
+      let too = document.getElementById("shootoo");
+      let sum = Number(localStorage.getItem("nemeh")) || 0;
+      too.innerHTML = sum;
+      let count = 0;
+      btn.addEventListener("click", function () {
+        if (count < 6) {
+          let randomtoo = Math.floor(Math.random() * 6) + 1;
+          sum += randomtoo;
+          zurag.src = "shoo" + randomtoo + ".png";
+          too.innerHTML = sum;
+          localStorage.setItem("nemeh", sum);
+          count++;
+          if (count == 5) {
+            btn.style.display = "none";
+          }
+        }
+      });
+    </script>
+    <a href="lab7-2.html">Санамсаргүй Тоо Шалгах</a>
+  </body>
+</html>
